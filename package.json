@@ -5,7 +5,7 @@
 	"main": "server.js",
 	"scripts": {
 		"start": "cross-env NODE_ENV=production node server.js",
-		"test": "cross-env NODE_ENV=test jest --runInBand",
+		"test": "jest --runInBand",
 		"lint": "eslint ."
 	},
 	"dependencies": {
