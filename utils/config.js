@@ -8,14 +8,15 @@ let PORT = process.env.PORT || 8080;
 let MORGAN_PRINT_LEVEL = process.env.MORGAN_PRINT_LEVEL || 'tiny';
 let NAME_DATABASE_URL =
 	process.env.NAME_DATABASE_URL || 'https://raw.githubusercontent.com/solita/dev-academy-2021/main/names.json';
-
-// Testing condition
-if (process.env.NODE_ENV === 'test') {
-	PORT = 3001;
-}
-
 // Set cors policy for backend
 var whitelist = process.env.CORS_WHITELIST;
+
+// Testing conditions
+if (process.env.NODE_ENV === 'test') {
+	PORT = 3001;
+	whitelist = ['*'];
+}
+
 let corsOptions = {
 	origin: function (origin, callback) {
 		if (whitelist.indexOf(origin) !== -1 || !origin) {
