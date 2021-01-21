@@ -34,7 +34,7 @@ describe('names routes tests', () => {
 			const { statusCode, body } = await api.get('/names?aggregate=amount').expect('Content-Type', /json/);
 			expect(statusCode).toEqual(200);
 			expect(body).toBeDefined();
-			expect(body).toEqual(211);
+			expect(body).toBe(211);
 		});
 	});
 
@@ -48,7 +48,7 @@ describe('names routes tests', () => {
 			const { statusCode, body } = await api.get('/names/Ville?key=amount').expect('Content-Type', /json/);
 			expect(statusCode).toEqual(200);
 			expect(body).toBeDefined();
-			expect(body).toEqual(24);
+			expect(body).toBe(24);
 		});
 		test('should return 404 when requestin non-existing name object', async () => {
 			const { statusCode, body } = await api.get('/names/IdontExistHAHA').expect('Content-Type', /json/);
