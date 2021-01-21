@@ -5,6 +5,10 @@ https://github.com/solita/dev-academy-2021
 
 This express application works as RESTful api
 
+There is an instance deployed to heroku, which allows you to test paths in browser.
+
+https://sda-implementation.herokuapp.com/
+
 #### 1. List names and amounts, order by amount, most popular first
 - GET /names?sort=amount
 
